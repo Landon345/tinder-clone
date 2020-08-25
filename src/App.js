@@ -5,12 +5,17 @@ import Header from "./Header";
 import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
 import Chats from "./Chats";
+import ChatScreen from "./ChatScreen";
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Switch>
+          <Route path="/chat/:person">
+            <Header backButton="/chats" />
+            <ChatScreen />
+          </Route>
           <Route path="/chats" exact>
             <Header backButton="/" />
             <Chats />
